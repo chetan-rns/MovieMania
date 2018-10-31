@@ -21,6 +21,7 @@ from django.views.generic import TemplateView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.index,name='index'),
+    path('video/<slug:slug>',views.detail,name='detail'),
     path('about/',TemplateView.as_view(template_name='movie_app/about.html'),name='about'),
     path('contacts/',TemplateView.as_view(template_name='movie_app/contacts.html'),name='contacts'),
 ]

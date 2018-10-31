@@ -3,5 +3,22 @@
 	Index Page-{{block.super}}
 {% endblock title %}
 {% block content %}
-	<h1>Hello world!!</h1>
+	<h1>Videos</h1>
+	{% for video in videos %}
+    <h2>
+        <a href="{% url 'detail' slug=video.slug %}">
+            {{ video.video_title }}
+        </a>
+    </h2>
+    <br>
+    {% endfor %}
+    {% for t in titles %}
+    <h2>
+    	<a href="{% url 'detail' slug=t|slugify %}">
+            {{t}}
+        </a>
+        
+    </h2>
+    <br>
+    {% endfor %}
 {% endblock content %}
